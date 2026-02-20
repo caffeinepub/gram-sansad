@@ -1,0 +1,167 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 7,
+  "summary": "Community web app (Gram Sansad) with announcement system, user registration with Aadhaar upload, and community chat with messaging, media sharing, and polls",
+  "architectural_notes": [
+    "PWA architecture for Android-like experience with home screen installation",
+    "Push notification system for announcements with custom sound alerts",
+    "File upload system for Aadhaar card images (front and back)",
+    "Real-time chat functionality with media support (images and videos)",
+    "Poll system integrated within chat interface"
+  ],
+  "known_issues": [
+    "YHash must be exactly 32 bytes, got 64 - error occurring during profile creation"
+  ],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-create-user-registration-form-collecting-name-father-name-age-mobile-number-whatsapp-number-state-district-and-village-fields-with-validation",
+      "title": "Create user registration form collecting name, father name, age, mobile number, WhatsApp number, state, district, and village fields with validation",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-aadhaar-card-photo-upload-functionality-to-registration-form-supporting-two-separate-image-uploads-for-front-and-back-sides",
+      "title": "Add Aadhaar card photo upload functionality to registration form supporting two separate image uploads for front and back sides",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-announcement-creation-interface-for-administrators-to-compose-and-broadcast-announcements-to-all-users",
+      "title": "Create announcement creation interface for administrators to compose and broadcast announcements to all users",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-browser-notification-with-custom-sound-that-triggers-when-announcements-arrive-to-alert-users-distinctly-from-other-notifications",
+      "title": "Add browser notification with custom sound that triggers when announcements arrive to alert users distinctly from other notifications",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-community-chat-interface-displaying-messages-in-chronological-order-with-support-for-text-photos-and-videos-similar-to-messaging-apps",
+      "title": "Create community chat interface displaying messages in chronological order with support for text, photos, and videos similar to messaging apps",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-poll-creation-feature-to-community-chat-allowing-users-to-create-polls-with-multiple-options",
+      "title": "Add poll creation feature to community chat allowing users to create polls with multiple options",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-a-cohesive-visual-theme-for-gram-sansad-with-warm-community-focused-colors-earth-tones-greens-or-traditional-indian-palette-clear-typography-suitable-for-diverse-age-groups-and-organized-layout-emphasizing-accessibility-and-ease-of-use-for-rural-community-members",
+      "title": "Design a cohesive visual theme for Gram Sansad with warm, community-focused colors (earth tones, greens, or traditional Indian palette), clear typography suitable for diverse age groups, and organized layout emphasizing accessibility and ease of use for rural community members",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-debug-and-fix-the-profile-creation-failure-that-occurs-when-users-enter-their-name-in-the-profile-setup-modal-ensuring-the-createprofile-backend-call-succeeds-and-properly-initializes-the-user-profile",
+      "title": "Debug and fix the profile creation failure that occurs when users enter their name in the profile setup modal, ensuring the createProfile backend call succeeds and properly initializes the user profile",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-error-logging-and-validation-to-the-profile-creation-flow-to-capture-the-root-cause-of-failures-including-backend-error-responses-authentication-state-issues-or-data-validation-problems",
+      "title": "Add error logging and validation to the profile creation flow to capture the root cause of failures, including backend error responses, authentication state issues, or data validation problems",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-yhash-serialization-error-that-occurs-during-profile-creation-by-ensuring-the-hash-value-passed-to-the-backend-is-exactly-32-bytes-instead-of-64-bytes-investigating-the-externalblob-conversion-or-hash-generation-in-the-profilesetupmodal-component",
+      "title": "Fix the YHash serialization error that occurs during profile creation by ensuring the hash value passed to the backend is exactly 32 bytes instead of 64 bytes, investigating the ExternalBlob conversion or hash generation in the ProfileSetupModal component",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-verify-that-the-externalblob-structure-for-aadharphoto-in-profilesetupmodal-correctly-initializes-with-empty-byte-arrays-that-serialize-to-valid-32-byte-hashes-when-sent-to-the-backend",
+      "title": "Verify that the ExternalBlob structure for aadharPhoto in ProfileSetupModal correctly initializes with empty byte arrays that serialize to valid 32-byte hashes when sent to the backend",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Announcement system with custom notification sound for all users",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "User registration form with name, father name, age, mobile, WhatsApp number, state, district, village, and Aadhaar card photo upload (both sides)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Community chat tab with text messages, photo sharing, and video sharing",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Poll creation feature within community chat",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Implement backend user registration endpoint storing all registration data including name, father name, age, mobile number, WhatsApp number, state, district, village, and Aadhaar photo references",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Implement backend announcement system that stores announcements and delivers them to all registered users with notification support",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Implement backend chat message storage and retrieval supporting text messages, photo attachments, and video attachments",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Implement backend poll system storing poll questions, options, user votes, and results accessible to all community members",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Gram Sansad",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

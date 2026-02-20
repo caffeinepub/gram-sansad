@@ -1,0 +1,48 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-20T06:23:13.835Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 2,
+    "implemented": 2,
+    "items": [
+      {
+        "id": "REQ-14",
+        "summary": "Fix the YHash serialization error that occurs during profile creation by ensuring the hash value passed to the backend is exactly 32 bytes instead of 64 bytes, investigating the ExternalBlob conversion or hash generation in the ProfileSetupModal component",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/ProfileSetupModal.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/ProfileSetupModal.tsx"
+        ]
+      },
+      {
+        "id": "REQ-15",
+        "summary": "Verify that the ExternalBlob structure for aadharPhoto in ProfileSetupModal correctly initializes with empty byte arrays that serialize to valid 32-byte hashes when sent to the backend",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/ProfileSetupModal.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/ProfileSetupModal.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/components/ProfileSetupModal.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

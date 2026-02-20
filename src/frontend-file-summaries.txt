@@ -1,0 +1,21 @@
+{
+  "frontend/src/App.tsx": "Main application component with routing, authentication flow, profile setup modal, announcement notifications initialization, and debug logging for authentication and profile states using TanStack Router and ThemeProvider.",
+  "frontend/src/components/Layout.tsx": "Consistent layout wrapper with header containing Gram Sansad branding and navigation, responsive mobile menu, user profile display, and footer with social links and attribution.",
+  "frontend/src/components/LoginPrompt.tsx": "Full-screen login prompt component displaying Gram Sansad branding and Internet Identity login button for unauthenticated users.",
+  "frontend/src/components/ProfileSetupModal.tsx": "Modal dialog that prompts new authenticated users to enter their name for initial profile creation, now creates an ExternalBlob with a 32-byte zero-filled array to ensure proper hash generation and avoid YHash serialization errors.",
+  "frontend/src/pages/ChatPage.tsx": "Chat page component that renders the community chat interface within a card layout with descriptive header.",
+  "frontend/src/pages/AdminAnnouncementsPage.tsx": "Admin-only page for creating and viewing announcements with role-based access control and announcement history display.",
+  "frontend/src/pages/RegisterPage.tsx": "Registration page that displays the comprehensive user registration form with Aadhaar upload within a card layout.",
+  "frontend/src/components/RegistrationForm.tsx": "Comprehensive registration form collecting user details (name, father name, age, mobile, WhatsApp, location) and Aadhaar photo with validation and submission handling.",
+  "frontend/src/components/ImageUploadField.tsx": "Reusable image upload component with file selection, preview, upload progress tracking using ExternalBlob, and remove functionality.",
+  "frontend/src/components/AnnouncementComposer.tsx": "Announcement composition form with textarea, character counter, and send button for admin users to broadcast messages.",
+  "frontend/src/components/ChatInterface.tsx": "Main chat interface with scrollable message list, auto-scroll functionality, and message composer with polling for real-time updates.",
+  "frontend/src/components/ChatMessage.tsx": "Individual chat message component that renders text, photo, or video content with appropriate icons and styling.",
+  "frontend/src/components/MessageComposer.tsx": "Message input component with text input, photo/video upload buttons, poll creation button, and send functionality.",
+  "frontend/src/components/PollCreator.tsx": "Modal dialog for creating polls with question input, dynamic option management (add/remove), and submission handling.",
+  "frontend/src/components/PollDisplay.tsx": "Poll display component showing question, votable options, vote counts with progress bars, and percentage calculations.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations including user profile, registration, announcements, chat messages, and polls with proper cache invalidation and detailed console logging for debugging profile creation and other operations.",
+  "frontend/src/hooks/useAnnouncementNotifications.ts": "Custom hook that monitors new announcements, plays custom alert sound, and triggers browser notifications with permission handling.",
+  "frontend/src/index.css": "Global styles with OKLCH color system featuring warm earth tones (browns at hue 35-40) and greens (hue 145) for traditional Indian community aesthetic in light and dark modes.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending theme with community-focused colors, larger base font size (16px) for accessibility, and increased line heights for readability."
+}

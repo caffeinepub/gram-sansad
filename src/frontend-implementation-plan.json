@@ -1,0 +1,40 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Fix YHash 32-byte error in profile creation",
+  "requirements": [
+    {
+      "id": "REQ-14",
+      "summary": "Fix the YHash serialization error during profile creation by ensuring the hash value is exactly 32 bytes instead of 64 bytes",
+      "acceptanceCriteria": [
+        "Profile creation completes successfully without YHash byte length errors",
+        "User can enter their name in ProfileSetupModal and create a profile",
+        "The createProfile backend call accepts the hash parameter without validation errors",
+        "Error logging captures any remaining serialization issues for debugging"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ProfileSetupModal.tsx",
+          "operation": "modify",
+          "description": "Investigate and fix the YHash serialization issue in the profile creation flow. The error indicates a 64-byte hash is being sent when 32 bytes are expected. Review how the hash is generated or converted before being passed to saveCallerUserProfile. Ensure any ExternalBlob conversions or hash generation produce exactly 32 bytes. Add error logging to capture serialization details for debugging. Verify the component's usage instructions for the blob-storage component before implementing to ensure correct ExternalBlob initialization."
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Verify ExternalBlob structure for aadharPhoto initializes with valid 32-byte hashes",
+      "acceptanceCriteria": [
+        "ExternalBlob initialization produces valid hash values for backend consumption",
+        "Empty photo fields do not cause serialization errors",
+        "Profile creation with no Aadhaar photos succeeds"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ProfileSetupModal.tsx",
+          "operation": "modify",
+          "description": "Verify that the ExternalBlob structure for aadharPhoto field correctly initializes with empty byte arrays that serialize to valid 32-byte hashes when sent to the backend. Ensure that when no photo is uploaded, the ExternalBlob still produces a valid hash format. Test profile creation with empty Aadhaar photo to confirm no serialization errors occur. Use the blob-storage component's ExternalBlob.fromBytes method correctly to ensure proper hash generation. Verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}

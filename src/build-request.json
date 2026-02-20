@@ -1,0 +1,56 @@
+{
+  "kind": "build_request",
+  "title": "Fix YHash 32-byte error in profile creation",
+  "projectName": "Gram Sansad",
+  "priority": "high",
+  "requirements": [
+    {
+      "id": "REQ-14",
+      "text": "Fix the YHash serialization error that occurs during profile creation by ensuring the hash value passed to the backend is exactly 32 bytes instead of 64 bytes, investigating the ExternalBlob conversion or hash generation in the ProfileSetupModal component",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-yhash-error"
+        ],
+        "quotes": [
+          "it is showing YHash must be exactly 32bytes, got 64"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Profile creation completes successfully without YHash byte length errors",
+        "User can enter their name in ProfileSetupModal and create a profile",
+        "The createProfile backend call accepts the hash parameter without validation errors",
+        "Error logging captures any remaining serialization issues for debugging"
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Verify that the ExternalBlob structure for aadharPhoto in ProfileSetupModal correctly initializes with empty byte arrays that serialize to valid 32-byte hashes when sent to the backend",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-yhash-error"
+        ]
+      },
+      "acceptanceCriteria": [
+        "ExternalBlob initialization produces valid hash values for backend consumption",
+        "Empty photo fields do not cause serialization errors",
+        "Profile creation with no Aadhaar photos succeeds"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not change the backend YHash type definition or validation logic",
+    "Preserve the existing ExternalBlob structure used throughout the application",
+    "Maintain compatibility with the Internet Identity authentication flow"
+  ],
+  "nonGoals": [
+    "Modifying the backend data model or actor interfaces",
+    "Changing the registration form or Aadhaar upload functionality",
+    "Altering the announcement or chat features"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

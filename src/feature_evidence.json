@@ -1,0 +1,45 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-fix-the-yhash-serialization-error-that-occurs-during-profile-creation-by-ensuring-the-hash-value-passed-to-the-backend-is-exactly-32-bytes-instead-of-64-bytes-investigating-the-externalblob-conversion-or-hash-generation-in-the-profilesetupmodal-component",
+      "featureTitle": "Fix the YHash serialization error that occurs during profile creation by ensuring the hash value passed to the backend is exactly 32 bytes instead of 64 bytes, investigating the ExternalBlob conversion or hash generation in the ProfileSetupModal component",
+      "files": [
+        "frontend/src/components/ProfileSetupModal.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-verify-that-the-externalblob-structure-for-aadharphoto-in-profilesetupmodal-correctly-initializes-with-empty-byte-arrays-that-serialize-to-valid-32-byte-hashes-when-sent-to-the-backend",
+      "featureTitle": "Verify that the ExternalBlob structure for aadharPhoto in ProfileSetupModal correctly initializes with empty byte arrays that serialize to valid 32-byte hashes when sent to the backend",
+      "files": [
+        "frontend/src/components/ProfileSetupModal.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
